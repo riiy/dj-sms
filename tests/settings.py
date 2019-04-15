@@ -31,3 +31,17 @@ if django.VERSION >= (1, 10):
     MIDDLEWARE = ()
 else:
     MIDDLEWARE_CLASSES = ()
+
+SMS = {
+    'default': {
+        "BACKEND": "dj_sms.backends.aliyun.AliyunSMS",
+        "AccessKeyID": "",
+        "AccessKeySecret": "",
+    },
+    "weimi":{
+        "BACKEND": "dj_sms.backends.weimi.WeimiSMS",
+        "uid":"ipScrzAANE33",
+        "pas":"jc5fv2nc",
+    }
+
+}

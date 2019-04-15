@@ -23,10 +23,10 @@ def get_version(*file_paths):
 
 version = get_version("dj_sms", "__init__.py")
 
-
 if sys.argv[-1] == 'publish':
     try:
         import wheel
+
         print("Wheel version: ", wheel.__version__)
     except ImportError:
         print('Wheel library missing. Please run "pip install wheel"')
@@ -44,6 +44,8 @@ if sys.argv[-1] == 'tag':
 readme = open('README.rst').read()
 history = open('HISTORY.rst').read().replace('.. :changelog:', '')
 
+REQUIRE_PACKAGES = ['requests']
+
 setup(
     name='dj-sms',
     version=version,
@@ -56,7 +58,7 @@ setup(
         'dj_sms',
     ],
     include_package_data=True,
-    install_requires=[],
+    install_requires=REQUIRE_PACKAGES,
     license="MIT",
     zip_safe=False,
     keywords='dj-sms',
