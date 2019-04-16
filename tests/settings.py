@@ -22,7 +22,7 @@ INSTALLED_APPS = [
     "django.contrib.auth",
     "django.contrib.contenttypes",
     "django.contrib.sites",
-    "dj_sms",
+    "dj_sms.apps.DjSmsConfig",
 ]
 
 SITE_ID = 1
@@ -32,7 +32,7 @@ if django.VERSION >= (1, 10):
 else:
     MIDDLEWARE_CLASSES = ()
 
-SMS = {
+DJSMS = {
     'default': {
         "BACKEND": "dj_sms.backends.aliyun.AliyunSMS",
         "AccessKeyID": "",
@@ -42,6 +42,7 @@ SMS = {
         "BACKEND": "dj_sms.backends.weimi.WeimiSMS",
         "uid":"ipScrzAANE33",
         "pas":"jc5fv2nc",
+        "cid":"nEFFQCJiIImA"
     }
 
 }
