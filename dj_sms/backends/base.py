@@ -2,7 +2,7 @@ from django.core.exceptions import ImproperlyConfigured
 from django.utils.module_loading import import_string
 
 
-class InvalidLiquidityBackendError(ImproperlyConfigured):
+class InvalidDjSmsBackendError(ImproperlyConfigured):
     pass
 
 

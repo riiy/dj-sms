@@ -27,7 +27,7 @@ class WeimiSMS(BaseSMS):
                                  "cid": cid,
                                  "type": "json",
                                  "p1": msg,
-                             }, timeout=3, verify=False)
+                             }, timeout=30, verify=False)
         return resp
 
     def send_batch(self, phones=None, msg=None, *args, **kwargs):
