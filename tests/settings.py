@@ -1,5 +1,5 @@
 # -*- coding: utf-8
-from __future__ import unicode_literals, absolute_import
+import os
 
 import django
 
@@ -31,18 +31,17 @@ if django.VERSION >= (1, 10):
     MIDDLEWARE = ()
 else:
     MIDDLEWARE_CLASSES = ()
-
 DJSMS = {
     'default': {
         "BACKEND": "dj_sms.backends.aliyun.AliyunSMS",
-        "AccessKeyID": "",
-        "AccessKeySecret": "",
+        "AccessKeyID": os.environ.get("AccessKeyID", ""),
+        "AccessKeySecret": os.environ.get("AccessKeySecret", ""),
+        "SignName": "身份验证",
     },
-    "weimi":{
+    "weimi": {
         "BACKEND": "dj_sms.backends.weimi.WeimiSMS",
-        "uid":"ipScrzAANE33",
-        "pas":"jc5fv2nc",
-        "cid":"nEFFQCJiIImA"
+        "uid": "ipScrzAANE33",
+        "pas": "jc5fv2nc",
+        "cid": "nEFFQCJiIImA"
     }
-
 }

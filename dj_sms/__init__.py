@@ -8,7 +8,7 @@ __all__ = [
     'BaseSMS',
 ]
 __version__ = '0.1.0'
-DEFAULT_DJSMS_ALIAS = 'weimi'
+DEFAULT_DJSMS_ALIAS = 'default'
 
 
 def _create_dj_sms(backend, **kwargs):
@@ -54,7 +54,7 @@ class DjSmsHandler:
 
         if alias not in settings.DJSMS:
             raise InvalidDjSmsBackendError(
-                "Could not find config for '%s' in settings.CACHES" % alias
+                "Could not find config for '%s' in settings.DJSMS" % alias
             )
 
         liqu = _create_dj_sms(alias)
